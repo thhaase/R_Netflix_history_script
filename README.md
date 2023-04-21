@@ -12,7 +12,7 @@
 # How to use:
 1. Download your netflix history. This is done by signing into your netflix account, clicking your icon in the top right corner, then click _account_. Now choose your profile and click on _view_ next to _Vieweing activity_. Now scroll down and _Download all_.
 
-2. put the script and your viewing history in one folder
+2. put the script and your viewing history in the same folder
 
 3. open the terminal and navigate to the Folder
 
