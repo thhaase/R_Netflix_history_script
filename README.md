@@ -4,7 +4,7 @@
 
 -------
 
-- I used most of the plots from [Saúl Buentello](shorturl.at/enFWZ)
+- I used most of the plots from [Saúl Buentello](shorturl.at/enFWZ) so he takes most of the credit.
 
 - I use Linux Mint, I have no Idea if the script will work on your PC
 
