@@ -23,8 +23,8 @@ netflix_top_viewed <- function(history, top){
     ggplot(aes(x = reorder(title, n), y = n)) +
     geom_col(fill = "#0097d6") +
     coord_flip() +
-    ggtitle(paste("Top",top, "geschaute Episodes"), filename) +
-    labs(x = "Serien", y = "geschaute Episoden") +
+    ggtitle(paste("Top",top, "binged series"), filename) +
+    labs(x = "series", y = "viewed episodes") +
     theme_minimal()
   
   return(marathon_sorted_plot)
@@ -36,8 +36,8 @@ netflix_per_time <- function(history){
     geom_col(color = c("#FFB90F")) +
     theme_minimal() +
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
-    ggtitle("Streams pro Tag", filename) +
-    labs(x = "Zeit", y = "geschaute Episoden/Filme") +
+    ggtitle("streams per day", filename) +
+    labs(x = "time", y = "viewed episodes/movies") +
     scale_x_date(date_labels = "%m %Y", breaks = seq(as.Date(range[1]), as.Date(range[2]), by = "2 months"))
 return(netflix_per_time_plot)
 }
@@ -49,8 +49,8 @@ netflix_heatmap <- function(history){
   netflix_per_day$diasemanaF <- weekdays(netflix_per_day$Date, abbreviate = T)
   netflix_per_day$mesF <- months(netflix_per_day$Date, abbreviate = T)
   #
-  netflix_per_day$diasemanaF <-factor(netflix_per_day$diasemana, levels = rev(1:7), labels = rev(c("Mo","Di","Mi","Do","Fr","Sa","So")),ordered = TRUE)
-  netflix_per_day$mesF <- factor(month(netflix_per_day$Date),levels = as.character(1:12), labels = c("Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"),ordered = TRUE)
+  netflix_per_day$diasemanaF <-factor(netflix_per_day$diasemana, levels = rev(1:7), labels = rev(c("Mo","Tu","We","Th","Fr","Sa","Su")),ordered = TRUE)
+  netflix_per_day$mesF <- factor(month(netflix_per_day$Date),levels = as.character(1:12), labels = c("January","February","March","April","May","June","July","August","September","October","November","December"),ordered = TRUE)
   netflix_per_day$añomes <- factor(as.yearmon(netflix_per_day$Date)) 
   netflix_per_day$semana <- as.numeric(format(netflix_per_day$Date,"%W"))
   netflix_per_day$semanames <- ceiling(day(netflix_per_day$Date) / 7)
@@ -58,9 +58,9 @@ netflix_heatmap <- function(history){
     geom_tile(colour = "white") + 
     facet_grid(year(netflix_per_day$Date) ~ mesF) + 
     scale_fill_gradient(low = "#FFD000", high = "#FF1919") + 
-    ggtitle("Aktivität pro Tag", paste("Heatmap der Tagesaktivität von",filename)) +
-    labs(x = "Woche des Monats", y = "Wochentag") +
-    labs(fill = "Episodenanzahl")
+    ggtitle("activity per day", filename) +
+    labs(x = "week oof the month", y = "weekday") +
+    labs(fill = "episodecount")
   return(netflix_per_day_calendario)
 }
 netflix_weekdays <- function(history){
@@ -71,8 +71,8 @@ netflix_weekdays <- function(history){
   netflix_per_day$diasemanaF <- weekdays(netflix_per_day$Date, abbreviate = T)
   netflix_per_day$mesF <- months(netflix_per_day$Date, abbreviate = T)
   #
-  netflix_per_day$diasemanaF <-factor(netflix_per_day$diasemana, levels = rev(1:7), labels = rev(c("Mo","Di","Mi","Do","Fr","Sa","So")),ordered = TRUE)
-  netflix_per_day$mesF <- factor(month(netflix_per_day$Date),levels = as.character(1:12), labels = c("Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"),ordered = TRUE)
+  netflix_per_day$diasemanaF <-factor(netflix_per_day$diasemana, levels = rev(1:7), labels = rev(c("Mo","Tu","We","Th","Fr","Sa","Su")),ordered = TRUE)
+  netflix_per_day$mesF <- factor(month(netflix_per_day$Date),levels = as.character(1:12), labels = c("January","February","March","April","May","June","July","August","September","October","November","December"),ordered = TRUE)
   netflix_per_day$añomes <- factor(as.yearmon(netflix_per_day$Date)) 
   netflix_per_day$semana <- as.numeric(format(netflix_per_day$Date,"%W"))
   netflix_per_day$semanames <- ceiling(day(netflix_per_day$Date) / 7)
@@ -88,7 +88,7 @@ netflix_weekdays <- function(history){
           axis.text.y = element_blank(),
           axis.text.x = element_text(face = "bold"),
           plot.title = element_text(size = 16, face = "bold")) +
-    ggtitle("Aktivität pro Wochentag", filename)
+    ggtitle("activity per weekday", filename)
 return(vista_dia_plot)
 }
 netflix_months <- function(history){
@@ -116,7 +116,7 @@ netflix_months <- function(history){
           axis.text.y = element_blank(),
           axis.text.x = element_text(face = "bold"),
           plot.title = element_text(size = 18, face = "bold")) +
-    ggtitle("Aktivität pro Monat", filename) 
+    ggtitle("activity per month", filename) 
 return(vista_mes_plot)
 }
 
@@ -170,8 +170,8 @@ top_gesehene_episoden_echte_anzahl <- function(history){
     ggplot(aes(x = reorder(title, n), y = n)) +
     geom_col(fill = "#0097d6") +
     coord_flip() +
-    ggtitle(paste("Top 20 geschaute Titel"), filename) +
-    labs(x = "Serien", y = "geschaute Episoden") +
+    ggtitle(paste("top 20 viewed titles"), filename) +
+    labs(x = "Serien", y = "geschaute episodes/movies") +
     theme_minimal()
   return(marathon_sorted_plot)
 }
