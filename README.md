@@ -4,7 +4,7 @@
 
 -------
 
-- I used most of the plots from [Saúl Buentello](shorturl.at/enFWZ) so he takes most of the credit.
+- I used most of the plots from [Saúl Buentello](https://towardsdatascience.com/explore-your-activity-on-netflix-with-r-how-to-analyze-and-visualize-your-viewing-history-e85792410706) so he takes most of the credit.
 
 - I use Linux Mint, I have no Idea if the script will work on your PC
 
