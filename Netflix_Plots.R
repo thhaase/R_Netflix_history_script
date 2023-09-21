@@ -23,7 +23,7 @@ netflix_top_viewed <- function(history, top){
     ggplot(aes(x = reorder(title, n), y = n)) +
     geom_col(fill = "#0097d6") +
     coord_flip() +
-    ggtitle(paste("Top",top, "binged series"), filename) +
+    ggtitle(paste("Top",top, "binged series (bingeing: view at least 6 episodes from one series per day)"), filename) +
     labs(x = "series", y = "viewed episodes") +
     theme_minimal()
   
@@ -179,7 +179,6 @@ top_gesehene_episoden_echte_anzahl <- function(history){
 # Reading and cleaning data ----
 
 # Input filename
-#filename <- readline(prompt="enter name of the history.csv file (without the .csv): ")
 cat("enter name of the history.csv file (without the .csv): ")
 filename <- readLines(con = "stdin", n = 1)
 

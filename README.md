@@ -1,3 +1,5 @@
+
+#R #Netflix 
 # Netflix_Plots.R
 
 ## Plot your Netflix viewing history 
@@ -10,7 +12,7 @@
 
 -------
 # How to use:
-1. Download your netflix history. This is done by signing into your netflix account, clicking your icon in the top right corner, then click _account_. Now choose your profile and click on _view_ next to _Vieweing activity_. Now scroll down and _Download all_.
+1. Download your netflix history. This is done by signing into your netflix account, clicking your icon in the top right corner, then click _account_. Now choose your profile and click on _view_ next to _Vieweing activity_. Now scroll down and _Download all_. Make shure your displaylanguage is set to german, otherwise the date formatting won't work.
 
 2. put the script and your viewing history in the same folder
 
